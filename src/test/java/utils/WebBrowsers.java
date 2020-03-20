@@ -12,7 +12,7 @@ public class WebBrowsers {
         WebDriver driver = null;
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--start-fullscreen", "start-maximized");
+        chromeOptions.addArguments("--window-size=1440,944");
 
         switch(browser) {
             case CHROME:

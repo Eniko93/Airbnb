@@ -9,16 +9,16 @@ import java.util.function.Function;
 
 public class BasePage {
 
-    private WebDriver driver;
+    protected WebDriver driver;
 
-    public BasePage(WebDriver driver, Function<? super WebDriver, ?> wait ) {
+    public BasePage(WebDriver driver, Function<? super WebDriver, ?> wait) {
         this.driver = driver;
         PageFactory.initElements(new WebDriverExtensionFieldDecorator(driver), this);
         this.waitUntil(wait);
 
     }
 
-    private  <V> void waitUntil(Function<? super WebDriver, V> isTrue) {
+    protected <V> void waitUntil(Function<? super WebDriver, V> isTrue) {
         WebDriverWait wait = new WebDriverWait(driver, 30);
 
         wait.until(isTrue);
